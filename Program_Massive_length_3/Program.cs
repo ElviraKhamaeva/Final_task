@@ -66,3 +66,4 @@ PrintArray(array);
 Console.WriteLine();
 Console.WriteLine("Элементы, длина которых меньше, либо равна 3 символам: ");
 PrintArray(FindArrayElementsLess3(array));
+Console.WriteLine();
