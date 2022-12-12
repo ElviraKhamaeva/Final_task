@@ -26,8 +26,26 @@ void PrintArray(string[] arr)
     Console.WriteLine("]");
 }
 
+string[] FindArrayElementsLess3(string[] arr)
+{
+    string[] arr2 = new string[0];
+    int j = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length <= 3)
+        {
+            j++;
+            Array.Resize(ref arr2, j);
+            arr2[j-1] = arr[i];
+        }
+    }
+    return arr2;
+}
+
+Console.Clear();
 Console.WriteLine("Если хотите задать массив вручную, то введите 1. Если нет, то введите 0.");
 int manuallyOrNot = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
 string[] array = new string[] { };
 
@@ -39,9 +57,12 @@ else
 {
     Console.WriteLine("Сколько строк хотите ввести?");
     int size = Convert.ToInt32(Console.ReadLine());
-
     array = new string[size];
     FillArray(array);
 }
 
+Console.WriteLine("Массив: ");
 PrintArray(array);
+Console.WriteLine();
+Console.WriteLine("Элементы, длина которых меньше, либо равна 3 символам: ");
+PrintArray(FindArrayElementsLess3(array));
