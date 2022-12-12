@@ -36,7 +36,7 @@ string[] FindArrayElementsLess3(string[] arr)
         {
             j++;
             Array.Resize(ref arr2, j);
-            arr2[j-1] = arr[i];
+            arr2[j - 1] = arr[i];
         }
     }
     return arr2;
